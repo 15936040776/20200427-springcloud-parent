@@ -20,6 +20,8 @@
         <module>20200504-springcloud-provider-hystrix</module>
         <module>20200506-springcloud-config-server</module>
         <module>20200506-springcloud-config-client</module>
+        <module>20200508-springcloud-zipkin-4081</module>
+        <module>20200508-springcloud-zuul-5081</module>
     </modules>
 
     <dependencyManagement>
@@ -105,6 +107,29 @@
                 <groupId>javax.persistence</groupId>
                 <artifactId>persistence-api</artifactId>
                 <version>1.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-server</artifactId>
+                <version>2.12.9</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-slf4j-impl</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-autoconfigure-ui</artifactId>
+                <version>2.12.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.8.10</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
